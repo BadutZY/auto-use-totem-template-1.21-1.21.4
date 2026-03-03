@@ -1,9 +1,9 @@
 {
 	"schemaVersion": 1,
-	"id": "craftable-items",
-	"version": "1.0.1",
-	"name": "Craftable Items",
-	"description": "Make uncraftable items Craftable",
+	"id": "auto-use-totem",
+	"version": "1.2.0",
+	"name": "Auto Use Totem",
+	"description": "Make Totem Of Undying auto use",
 	"authors": [
 		"BadutZY"
 	],
@@ -11,24 +11,29 @@
 		"homepage": "https://modrinth.com/user/BadutZY"
 	},
 	"license": "MIT",
-	"icon": "assets/craftable/icon.png",
+	"icon": "assets/autototem/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.craftable.CraftableItems"
+			"com.example.autototem.AutoTotemMod"
 		],
-		"fabric-datagen": [
-			"com.example.craftable.CraftableItemsDataGenerator"
+		"client": [
+			"com.example.autototem.AutoTotemClient"
+		],
+		"modmenu": [
+			"com.example.autototem.AutoTotemClient"
 		]
 	},
 	"mixins": [
-		"craftable.mixins.json"
+		"autototem.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.10",
-		"minecraft": "~1.21.4",
+		"fabricloader": ">=0.17.3",
+		"minecraft": "~1.21.9",
 		"java": ">=21",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"modmenu": ">=16.0.0-rc.1",
+		"cloth-config": ">=20.0.149+fabric"
 	},
 	"suggests": {
 		"another-mod": "*"
